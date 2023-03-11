@@ -1,0 +1,86 @@
+@use '../../mixins/responsive.scss' as *;
+
+.carousel {
+  &__container {
+    display: flex;
+    overflow: scroll;
+    gap: 2rem;
+    margin-bottom: 5rem;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 0 2rem;
+    align-items: end;
+    height: 28rem;
+    @include responsive(laptop) {
+      padding: 0 4rem;
+    }
+  }
+  &__container--grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 3rem));
+    overflow: scroll;
+    gap: 1.5rem;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 0 1.5rem;
+    align-items: end;
+    height: 22rem;
+    margin-bottom: 5rem;
+    @include responsive(laptop) {
+      height: 28rem;
+      grid-auto-columns: calc((100% - 4rem) / 3);
+      padding: 0 4rem;
+      gap: 3rem;
+      align-items: end;
+    }
+  }
+  &__item {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    flex-shrink: 0;
+    width: calc((100% - 4rem));
+
+    transition: all 0.5s ease-in-out;
+    height: 25rem;
+    object-fit: cover;
+    @include responsive(laptop) {
+      scroll-snap-align: start;
+      width: calc((100% - 4rem) / 3);
+    }
+  }
+  &__item--grid {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    height: 22rem;
+    width: 100%;
+
+    object-fit: cover;
+    transition: padding 0.5s;
+    padding-top: 10rem;
+    @include responsive(laptop) {
+      height: 28rem;
+      scroll-snap-align: start;
+    }
+  }
+}
+
+[data-color='purple'] {
+  //   border: 3px solid rgb(79, 3, 112);
+  padding-top: 0rem;
+}
+[data-color='pink'] {
+  //   border: 1px solid rgb(175, 14, 189);
+  padding-top: 6rem;
+}
+[data-color='green'] {
+  //   border: 1px solid green !important;
+  padding-top: 6rem;
+  @include responsive(laptop) {
+    padding-top: 10rem;
+  }
+}
+
+// .active {
+// //   border-bottom: 1px solid red;
+// }
