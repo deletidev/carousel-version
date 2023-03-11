@@ -14,7 +14,7 @@ let callback = (entries, observer) => {
       entry.target.classList.add('active');
       entry.target.dataset.color = 'purple';
       let activos = document.querySelectorAll('.active');
-      console.log(activos);
+
       if (activos.length === 2) {
         activos[0].dataset.color = 'green';
         activos[1].dataset.color = 'purple';
