@@ -27,6 +27,12 @@
     align-items: end;
     height: 22rem;
     margin-bottom: 5rem;
+    @include responsive(tablet) {
+      height: 28rem;
+      gap: 3rem;
+      grid-auto-columns: calc((100% - 4rem) / 2);
+      padding: 0 2rem;
+    }
     @include responsive(laptop) {
       height: 28rem;
       grid-auto-columns: calc((100% - 4rem) / 3);
@@ -56,10 +62,13 @@
     width: 100%;
 
     object-fit: cover;
-    transition: padding 0.5s;
+    transition: padding 0.5s ease-in-out;
     padding-top: 10rem;
-    @include responsive(laptop) {
+    @include responsive(tablet) {
       height: 28rem;
+      scroll-snap-align: start;
+    }
+    @include responsive(laptop) {
       scroll-snap-align: start;
     }
   }

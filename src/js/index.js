@@ -14,8 +14,12 @@ let callback = (entries, observer) => {
       entry.target.classList.add('active');
       entry.target.dataset.color = 'purple';
       let activos = document.querySelectorAll('.active');
-
-      if (activos.length === 3 || activos.length === 4) {
+      console.log(activos);
+      if (activos.length === 2) {
+        activos[0].dataset.color = 'green';
+        activos[1].dataset.color = 'purple';
+      } else if (activos.length === 3 || activos.length === 4) {
+        console.log('aqui');
         activos[0].dataset.color = 'green';
         activos[1].dataset.color = 'pink';
         activos[2].dataset.color = 'purple';
@@ -26,6 +30,11 @@ let callback = (entries, observer) => {
     } else {
       entry.target.classList.remove('active');
       entry.target.dataset.color = 'green';
+
+      if (target[target.length - 1].classList.contains('active')) {
+        target[target.length - 1].classList.remove('active');
+        target[target.length - 1].dataset.color = 'purple';
+      }
     }
   });
 };
@@ -33,5 +42,6 @@ let callback = (entries, observer) => {
 let observer = new IntersectionObserver(callback, options);
 let target = document.querySelectorAll('.carousel__item--grid');
 target.forEach(target => {
+  target.classList.remove('active');
   observer.observe(target);
 });
