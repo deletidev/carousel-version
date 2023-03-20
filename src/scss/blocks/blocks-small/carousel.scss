@@ -5,7 +5,7 @@
     display: flex;
     overflow: scroll;
     gap: 2rem;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     padding: 0 2rem;
@@ -26,7 +26,7 @@
     padding: 0 1.5rem;
     align-items: end;
     height: 22rem;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
     @include responsive(tablet) {
       height: 28rem;
       gap: 3rem;
@@ -46,7 +46,6 @@
     scroll-snap-stop: always;
     flex-shrink: 0;
     width: calc((100% - 4rem));
-
     transition: all 0.5s ease-in-out;
     height: 25rem;
     object-fit: cover;
@@ -60,7 +59,6 @@
     scroll-snap-stop: always;
     height: 22rem;
     width: 100%;
-
     object-fit: cover;
     transition: padding 0.5s ease-in-out;
     padding-top: 10rem;
@@ -71,6 +69,16 @@
     @include responsive(laptop) {
       scroll-snap-align: start;
     }
+  }
+  &__btn {
+    background-color: transparent;
+    border: none;
+  }
+  &__arrows {
+    cursor: pointer;
+  }
+  &__btn:disabled .carousel__arrows {
+    opacity: 0.3;
   }
 }
 

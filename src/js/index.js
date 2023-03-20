@@ -16,7 +16,6 @@ let callback = (entries, observer) => {
       entry.target.classList.add('active');
       entry.target.dataset.color = 'purple';
       let activos = area.querySelectorAll('.active');
-      console.log(activos);
       if (activos.length > 1) {
         activos.forEach((activo, index) => {
           activo.dataset.color = colores[index];

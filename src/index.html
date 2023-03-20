@@ -2,111 +2,152 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
-    <link rel="icon" type="image/svg+xml" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Limelight&family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
     <title>Carousel-version</title>
   </head>
   <body>
     <main>
-      <div class="container">
-        <h2>Carousel</h2>
-        <div id="scrollArea2" class="carousel__container">
-          <img
-            class="carousel__item"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=1"
-          />
-          <img
-            class="carousel__item"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=2"
-          />
-          <img
-            class="carousel__item"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=3"
-          />
-          <img
-            class="carousel__item"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=4"
-          />
-          <img
-            class="carousel__item"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=5"
-          />
-          <img
-            id="ver-2"
-            class="carousel__item"
-            data-color="pink"
-            src="https://source.unsplash.com/random/200x200?sig=6"
-          />
-          <img
-            class="carousel__item"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=7"
-          />
-          <img
-            class="carousel__item"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=8"
-          />
-          <img
-            class="carousel__item"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=9"
-          />
+      <div class="container padding-sections">
+        <h2 class="title title-xxl">Carousel</h2>
+        <p class="max-text">
+          Two examples of responsive carousels: the first one only with a little
+          bit of javascript to move it with the buttons when there is no
+          possibility of scrolling-horizontal on the device and the second one
+          has a bit more javascript to make changes based on the carousel
+          scroll.
+        </p>
+        <div class="simple padding-carousel">
+          <h3 class="title title-l">Simple</h3>
+          <div id="scrollArea2" class="carousel__container">
+            <img
+              class="carousel__item"
+              src="https://source.unsplash.com/random/200x200?sig=1"
+            />
+            <img
+              class="carousel__item"
+              src="https://source.unsplash.com/random/200x200?sig=2"
+            />
+            <img
+              class="carousel__item"
+              src="https://source.unsplash.com/random/200x200?sig=3"
+            />
+            <img
+              class="carousel__item"
+              src="https://source.unsplash.com/random/200x200?sig=4"
+            />
+            <img
+              class="carousel__item"
+              src="https://source.unsplash.com/random/200x200?sig=5"
+            />
+            <img
+              id="ver-2"
+              class="carousel__item"
+              src="https://source.unsplash.com/random/200x200?sig=6"
+            />
+            <img
+              class="carousel__item"
+              src="https://source.unsplash.com/random/200x200?sig=7"
+            />
+            <img
+              class="carousel__item"
+              src="https://source.unsplash.com/random/200x200?sig=8"
+            />
+            <img
+              class="carousel__item"
+              src="https://source.unsplash.com/random/200x200?sig=9"
+            />
+          </div>
+          <div id="simple-arrows" class="flex flex-row gap-m">
+            <button id="simple-prev" class="carousel__btn">
+              <img
+                class="carousel__arrows"
+                src="./assets/images/arrow-prev.svg"
+                alt="flecha siguiente"
+              />
+            </button>
+
+            <button id="simple-next" class="carousel__btn">
+              <img
+                class="carousel__arrows"
+                src="./assets/images/arrow-next.svg"
+                alt="flecha anterior"
+              />
+            </button>
+          </div>
         </div>
-        <div id="scrollArea" class="carousel__container--grid">
-          <img
-            class="carousel__item--grid"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=1"
-          />
-          <img
-            class="carousel__item--grid"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=2"
-          />
-          <img
-            class="carousel__item--grid"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=3"
-          />
-          <img
-            class="carousel__item--grid"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=4"
-          />
-          <img
-            class="carousel__item--grid"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=5"
-          />
-          <img
-            class="carousel__item--grid"
-            data-color="green"
-            id="ver"
-            src="https://source.unsplash.com/random/200x200?sig=6"
-          />
-          <img
-            class="carousel__item--grid"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=7"
-          />
-          <img
-            class="carousel__item--grid"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=8"
-          />
-          <img
-            class="carousel__item--grid"
-            data-color="green"
-            src="https://source.unsplash.com/random/200x200?sig=9"
-          />
+        <div class="version padding-carousel">
+          <h2 class="title title-l">Version</h2>
+          <div id="scrollArea" class="carousel__container--grid">
+            <img
+              class="carousel__item--grid"
+              data-color="green"
+              src="https://source.unsplash.com/random/200x200?sig=1"
+            />
+            <img
+              class="carousel__item--grid"
+              data-color="green"
+              src="https://source.unsplash.com/random/200x200?sig=2"
+            />
+            <img
+              class="carousel__item--grid"
+              data-color="green"
+              src="https://source.unsplash.com/random/200x200?sig=3"
+            />
+            <img
+              class="carousel__item--grid"
+              data-color="green"
+              src="https://source.unsplash.com/random/200x200?sig=4"
+            />
+            <img
+              class="carousel__item--grid"
+              data-color="green"
+              src="https://source.unsplash.com/random/200x200?sig=5"
+            />
+            <img
+              class="carousel__item--grid"
+              data-color="green"
+              id="ver"
+              src="https://source.unsplash.com/random/200x200?sig=6"
+            />
+            <img
+              class="carousel__item--grid"
+              data-color="green"
+              src="https://source.unsplash.com/random/200x200?sig=7"
+            />
+            <img
+              class="carousel__item--grid"
+              data-color="green"
+              src="https://source.unsplash.com/random/200x200?sig=8"
+            />
+            <img
+              class="carousel__item--grid"
+              data-color="green"
+              src="https://source.unsplash.com/random/200x200?sig=9"
+            />
+          </div>
+          <div id="version-arrows" class="flex flex-row gap-m">
+            <button id="version-prev" class="carousel__btn">
+              <img
+                class="carousel__arrows"
+                src="./assets/images/arrow-prev.svg"
+                alt="flecha siguiente"
+              />
+            </button>
+
+            <button id="version-next" class="carousel__btn">
+              <img
+                class="carousel__arrows"
+                src="./assets/images/arrow-next.svg"
+                alt="flecha anterior"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </main>

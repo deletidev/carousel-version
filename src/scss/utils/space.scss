@@ -1,4 +1,4 @@
-@use "../mixins/responsive.scss" as *;
+@use '../mixins/responsive.scss' as *;
 
 .gap-s {
   gap: 1rem;
@@ -26,6 +26,10 @@
     padding-bottom: 9rem;
   }
 }
+.padding-carousel {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
 
 .flow > * + * {
   padding-top: var(--flow);
@@ -46,9 +50,6 @@
 
 .max-text {
   @include responsive(tablet) {
-    max-width: 70ch;
-  }
-  @include responsive(laptop) {
-    max-width: 200ch;
+    max-width: 60ch;
   }
 }
