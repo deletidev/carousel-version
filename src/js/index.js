@@ -1,11 +1,13 @@
 // El styles lo importamos aquí, ya se carga después al compilar todo
 import '../scss/styles.scss';
 
+const area = document.getElementById('scrollArea');
+const colores = ['green', 'pink', 'purple'];
+
 let options = {
-  root: document.querySelector('#scrollArea'),
+  root: area,
   rootMargin: '0px',
-  threshold: [0.5]
-  //   delay: 0
+  threshold: [0.7]
 };
 
 let callback = (entries, observer) => {
@@ -13,27 +15,16 @@ let callback = (entries, observer) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('active');
       entry.target.dataset.color = 'purple';
-      let activos = document.querySelectorAll('.active');
-      if (activos.length === 2) {
-        activos[0].dataset.color = 'green';
-        activos[1].dataset.color = 'purple';
-      } else if (activos.length === 3 || activos.length === 4) {
-        console.log('aqui');
-        activos[0].dataset.color = 'green';
-        activos[1].dataset.color = 'pink';
-        activos[2].dataset.color = 'purple';
-        activos[2].nextElementSibling.dataset.color = 'pink';
-        activos[2].nextElementSibling.nextElementSibling.dataset.color =
-          'green';
+      let activos = area.querySelectorAll('.active');
+      console.log(activos);
+      if (activos.length > 1) {
+        activos.forEach((activo, index) => {
+          activo.dataset.color = colores[index];
+        });
       }
     } else {
       entry.target.classList.remove('active');
       entry.target.dataset.color = 'green';
-
-      if (target[target.length - 1].classList.contains('active')) {
-        target[target.length - 1].classList.remove('active');
-        target[target.length - 1].dataset.color = 'purple';
-      }
     }
   });
 };
