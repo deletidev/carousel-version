@@ -17,14 +17,8 @@
 }
 
 .padding-sections {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
-  @include responsive(tablet) {
-    padding-bottom: 8rem;
-  }
-  @include responsive(laptop) {
-    padding-bottom: 9rem;
-  }
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 .padding-carousel {
   padding-top: 4rem;
