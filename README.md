@@ -4,7 +4,7 @@
 
 ## Ejemplo en vivo
 
-- [Ver página](https://studio-d63s.onrender.com/)
+- [Ver página](https://carouselobserver.onrender.com/)
 
 ## Descripción 📑
 
